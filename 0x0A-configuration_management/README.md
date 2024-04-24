@@ -1,4 +1,4 @@
-0x0A. Configuration management
+#0x0A-configuration_management
 
 Tasks
 0. Create a file
@@ -26,9 +26,13 @@ Version must be 2.1.0
 
 2. Execute a command
 mandatory
+
 Using Puppet, create a manifest that kills a process named killmenow.
 
 Requirements:
 
 Must use the exec Puppet resource
 Must use pkill
+Example:
+
+Terminal #0 - starting my process
