@@ -1,16 +1,12 @@
-# Setting up my client config file
-include stdlib
+#!/usr/bin/env bash
+# using puppet to make changes to our config file
 
-file_line { 'Turn off passwd auth':
-  ensure => present,
-  path   => '/etc/ssh/ssh_config',
-  line   => ' 	 PasswordAuthentication no',
-  replace => true,
-}
+file { 'etc/ssh/ssh_config':
+	ensure => prensent,
 
-file_line { 'Declare identity file':
-  ensure => present,
-  path   => '/etc/ssh/ssh_config',
-  line   => '	  Identity ~/.ssh/school',
-  replace => true,
+content =>"
+	#SSH client configuration
+	host*
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
 }
