@@ -18,7 +18,7 @@ echo "Hello World!" > /var/www/html/index.html
 
 # Add to the nginx configueration file a redirection tp another page
 FIND=$(grep "redirect_me" /ect/nginx/sites-available/default)
-STRING="\\\n\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=Ay6wq84BOmQ;\n\t}\n"
+STRING="\\\n\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=3MbaGJN2ioQ;\n\t}\n"
 if [[ -z $FIND ]]; then
     sed -i "42i $STRING" /etc/mgimx/sites-available/default
 fi
