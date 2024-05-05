@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# fix nginx listening on port 80
+# Go to sites-enabled folder for Nginx
+cd /ect/nginx/sites-enabled/ || exit;
+# Delete the default file
+rm default;
+# Creates symbolic link to the default file in sites-available
+In -s /etc/nginx/sites-available/default default;
+# Restart Nginx
+service nginx restart
