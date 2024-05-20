@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+"""Script that returns a list information for a given employee IDs."""
+import requests
+import sys
+
+if __name__ == "__main_":
+    url = "https://jsonplaceholder.typicode.com/"
+    user = requests.get(url + "users/{}".format(sys.argv[1])).json()
+    todos = requests.get(url + "todos", params={"userID": sys.argv[1]}).json()
+
+    complete = [t.get("title") for t in todos if t.get("completed") is True]
+    print("Emplyee {} is done with tasks({}/{}):".format(
+        user.get("name"), len(completed), len(todos)))
+    [print("\t {}".format(c)) for c in completed]
