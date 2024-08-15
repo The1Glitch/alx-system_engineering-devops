@@ -1,5 +1,12 @@
-# Project Name:
-0x16. API advanced
+Name of the project
+
+0x16-api_advanced
+
+About the project:
+
+Questions involving APIs are common for interviews. Sometimes they’re as simple as ‘write a Python script that queries a given endpoint’, sometimes they require you to use recursive functions and format/sort the results.
+
+A great API to use for some practice is the Reddit API. There’s a lot of endpoints available, many that don’t require any form of authentication, and there’s tons of information to be parsed out and presented. Getting comfortable with API calls now can save you some face during technical interviews and even outside of the job market, you might find personal use cases to make your life a little bit easier.
 
 Tasks
 0. How many subs?
@@ -47,3 +54,4 @@ Results are based on the number of times a keyword appears, not titles it appear
 To make life easier, java. or java! or java_ should not count as java
 If no posts match or the subreddit is invalid, print nothing.
 NOTE: Invalid subreddits may return a redirect to search results. Ensure that you are NOT following redirects.
+Your code will NOT pass if you are using a loop and not recursively calling the function! This /can/ be done with a loop but the point is to use a recursive
