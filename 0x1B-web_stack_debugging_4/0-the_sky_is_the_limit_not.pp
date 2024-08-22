@@ -1,10 +1,6 @@
-# This puppet manifets optimizes the Nginx to hanlde the concurrency
-exec { 'fix--for-nginx':
-  command => '/usr/sbin/nginx -s reload',
-  path    => '/usr/bin:/usr/sbin:/bin:/sbin',
-}
-file { '/etc/nginx/nginx.conf':
-  ensure  => file,
-  content => template('nginx/nginx.conf.erb'),
-  notify  => Exec['fix--for-nginx'],
+# fix the nginx to accept and serve more requests
+
+exec {'modify max open files limit setting':
+  command => 'sed -i "s/15/4096/" /etc/default/nginx && sudo service nginx restart',
+  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games',
 }
